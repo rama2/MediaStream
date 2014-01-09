@@ -1,0 +1,24 @@
+
+<input type="search" class="form-control" ng-model="search" placeholder="Search" style="width: 100%;" class="search-query"/>
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Poster</th>
+            <th></th>
+            <th><a href="#/admin/chanels/new"><i class="glyphicon glyphicon-plus-sign"></i></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="chanel in chanels | filter:search | orderBy:'postedTime':true" >
+            <td>{{chanel.name}}</a></td>
+            <td>
+                <span style="margin-left: 8px;" class="label label-primary" ng-repeat="category in chanel.categories">{{category.name}}</span>
+            </td>
+            <td><img ng-src="{{chanel.poster}}" width="50" height="50"/></td>
+            <td><a href="#/admin/videos/?chanelId={{chanel.id}}"><button class="btn btn-success">{{chanel.name}} Videos</button></a></td>
+            <td><a href="#/admin/chanels/edit/{{chanel.id}}"><i class="glyphicon glyphicon-pencil"></i></a></td>
+        </tr>
+        </tbody>
+    </table>

@@ -1,0 +1,52 @@
+
+<input type="search" class="form-control" ng-model="search" placeholder="Search" style="width: 100%;" class="search-query"/>
+<br/>
+
+<div>
+    <span>
+      <span>
+        <hr />
+        <div class="row">
+
+            <div class="col-sm-2" ng-repeat="video in videos | filter:search | orderBy:'postedTime':true">
+                <div class="thumbnail">
+                    <img ng-src="{{video.image}}" alt="{{videos.title}}" ng-click="playVideo(video)">
+                    <!--<div class="caption">
+                        <b>{{video.title}}</b>
+                        <p> <span style="margin-left: 8px;" class="label label-primary" ng-repeat="category in videos[i].categories">{{category.name}}</span></p>
+                        <p><button ng-click="playVideo(video)" class="btn btn-success">Play</button></p>
+                    </div>-->
+                </div>
+            </div>
+
+        </div>
+      </span>
+    </span>
+</div>
+
+<!--
+<div class="row" >
+						<div ng-repeat="video in videos | filter:search | orderBy:'postedTime':true" class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
+		    <div class="thumbnail bootsnipp-thumb">
+			    <div>
+			    	<p class="pull-right view-counts hidden-md">
+			    		<span class="tip" data-toggle="tooltip" title="" data-original-title="Viewed">1.4K <i class="icon-eye-open"></i></span> 
+
+			    		<span class="tip" data-toggle="tooltip" title="" data-original-title="Favorited">1 <i class="icon-thumbs-up"></i></span> 
+			    		<span><span class="label label-info tip" data-toggle="tooltip" title="" data-original-title="Bootstrap version">2.3.2</span></span>
+			    	</p>
+			    	<p class="lead snipp-title">
+			    		{{video.title}}
+			    	</p>
+			    </div>
+			    
+                    &lt;!&ndash;<div style="background-image: url('{{video.image}}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div>&ndash;&gt;
+		    		<img ng-click="playVideo(video)" ng-src="{{video.image}}" alt="{{video.title}}">
+		    	
+		    	<div class="caption">
+		        	<p><button ng-click="playVideo(video)" class="btn btn-primary btn-lg btn-block">Play</button></p>
+		    	</div>
+		    </div>
+		</div>
+				
+			</div>-->

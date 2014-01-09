@@ -1,0 +1,24 @@
+
+<input type="search" class="form-control" ng-model="search" placeholder="Search" style="width: 100%;" class="search-query"/>
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Preview</th>
+            <th></th>
+            <th><a href="#/admin/videos/new"><i class="glyphicon glyphicon-plus-sign"></i></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="video in videos | filter:search | orderBy:'postedTime':true" >
+            <td>{{video.title}}</a></td>
+            <td>
+                <span style="margin-left: 8px;" class="label label-primary" ng-repeat="category in video.categories">{{category.name}}</span>
+            </td>
+            <td><img ng-src="{{video.image}}" width="50" height="50"/></td>
+            <td><button ng-click="playVideo(video)" class="btn btn-success">Play</button></td>
+            <td><a href="#/admin/videos/edit/{{video.id}}"><i class="glyphicon glyphicon-pencil"></i></a></td>
+        </tr>
+        </tbody>
+    </table>

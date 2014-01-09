@@ -1,0 +1,29 @@
+
+<input type="search" class="form-control" ng-model="search" placeholder="Search" style="width: 100%;" class="search-query"/>
+<br/>
+
+<div class="row" >
+						<div ng-repeat="chanel in chanels | filter:search | orderBy:'postedTime':true" class="col-sm-12 col-xs-12 col-md-4 col-lg-4">
+		    <div class="thumbnail bootsnipp-thumb">
+			    <div>
+			    	<p class="pull-right view-counts hidden-md">
+			    		<span class="tip" data-toggle="tooltip" title="" data-original-title="Viewed">1.4K <i class="icon-eye-open"></i></span> 
+
+			    		<span class="tip" data-toggle="tooltip" title="" data-original-title="Favorited">1 <i class="icon-thumbs-up"></i></span> 
+			    		<span><span class="label label-info tip" data-toggle="tooltip" title="" data-original-title="Bootstrap version">2.3.2</span></span>
+			    	</p>
+			    	<p class="lead snipp-title">
+			    		{{chanel.name}}
+			    	</p>
+			    </div>
+			    
+                    <!--<div style="background-image: url('{{chanel.image}}');background-size:contain;background-repeat:no-repeat;background-position:center;"></div>-->
+		    		<a href="#/videos/?chanelId={{chanel.id}}"><img ng-click="visitChael(chanel)" ng-src="{{chanel.poster}}" alt="{{chanel.name}}"></a>
+		    	
+		    	<div class="caption">
+		        	<p><a href="#/videos/?chanelId={{chanel.id}}"><button class="btn btn-primary btn-lg btn-block">Visit {{chanel.name}}</button></a></p>
+		    	</div>
+		    </div>
+		</div>
+				
+</div>

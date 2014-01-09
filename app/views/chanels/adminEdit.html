@@ -1,0 +1,31 @@
+<form name="myForm" class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="title" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+            <input id="title" type="text" class="form-control" name="name" ng-model="chanel.name" required="required" placeholder="Chanel Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="image" class="col-lg-2 control-label">Poster</label>
+        <div class="col-lg-10">
+            <input id="poster" type="url" class="form-control" name="image" ng-model="chanel.poster" required="required" placeholder="Chanel Poster">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="categoryIds" class="col-lg-2 control-label">Categories</label>
+        <div class="col-lg-10">
+            <select  id="categoryIds" chosen multiple style="width: 100%" required="required" data-placeholder="Pick the Categories" ng-model="chanel.categoryIds" ng-options="category.id as category.name group by category.chanelName for category in categories">
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+    <label class="col-lg-2 control-label"></label>
+        <div class="col-lg-10">
+        <a href="#/admin/chanels" class="btn btn-default">Cancel</a>
+        <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid" class="btn btn-primary">Save</button>
+        <button ng-click="delete()" ng-show="chanel.id" class="btn btn-danger">Delete</button>
+            </div>
+    </div>
+</form>

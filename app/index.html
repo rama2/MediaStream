@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <!-- Website Title & Description for Search Engine purposes -->
+    <title>Code a Responsive Website with Twitter Bootstrap 3</title>
+    <meta name="description" content="Learn how to code your first responsive website with the new Twitter Bootstrap 3.">
+
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/includes/css/styles.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/signin.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <!-- endbuild -->
+
+    <link href="styles/includes/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.0/chosen.css">
+
+    <!-- Include Modernizr in the head, before any other Javascript -->
+
+    <!-- ref:js //cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js-->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endref -->
+
+</head>
+<body ng-app="rokumanv1.1App" ng-cloak>
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!--[if lt IE 9]>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.1.0/es5-shim.min.js"></script>
+
+<script src="ref:js //cdnjs.cloudflare.com/ajax/libs/json3/3.2.5/json3.min.js"></script>
+
+<![endif]-->
+
+<div class="container" id="main">
+
+<div class="navbar navbar-fixed-top">
+    <div class="container">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="/"> <!--<img src="images/logo.png" alt="Your Logo">-->
+        <b>RokuMan</b>
+        </a>
+
+        <div class="nav-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active : isActive('/',true)}"><a href="#">Home</a></li>
+                <li ng-class="{active : isActive('/videos')}"><a href="#/videos/">Videos</a></li>
+                <li ng-class="{active : isActive('/chanels')}"><a href="#/chanels">Chanels</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown">Admin <strong class="caret"></strong></a>
+
+                    <ul class="dropdown-menu">
+
+                        <li class="dropdown-header">Media</li>
+                        <li><a href="#/admin/chanels/">Chanels</a></li>
+                        <li><a href="#/admin/videos/">Videos</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Dashboards</li>
+                        <li><a href="#/admin/dashboard">General Dashboard</a></li>
+
+                    </ul><!-- end dropdown-menu -->
+                </li>
+            </ul>
+
+            <form class="navbar-form pull-left">
+                <input type="text" class="form-control" placeholder="Search this site..." id="searchInput">
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+            </form><!-- end navbar-form -->
+
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown">
+                    <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <b>{{currentUser.fullName}}</b> <strong class="caret"></strong></a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-wrench"></span> Settings</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-refresh"></span> Update Profile</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-briefcase"></span> Billing</a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- end nav pull-right -->
+        </div><!-- end nav-collapse -->
+
+    </div><!-- end container -->
+</div><!-- end navbar -->
+
+
+<!-- Begin page content -->
+<div class="container" style="margin-top: 55px;margin-bottom: 15px;">
+    <!-- Add your site or application content here -->
+    <div class="container" ng-view=""></div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">
+                <h6>Copyright &copy; 2013 Ramatou</h6>
+            </div><!-- end col-sm-2 -->
+
+            <div class="col-sm-4">
+                <h6>About Us</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div><!-- end col-sm-4 -->
+
+            <div class="col-sm-2">
+                <h6>Navigation</h6>
+                <ul class="unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Links</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div><!-- end col-sm-2 -->
+
+            <div class="col-sm-2">
+                <h6>Follow Us</h6>
+                <ul class="unstyled">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Google Plus</a></li>
+                </ul>
+            </div><!-- end col-sm-2 -->
+
+            <div class="col-sm-2">
+                <h6>Coded with <span class="glyphicon glyphicon-heart"></span> by Djibril</h6>
+            </div><!-- end col-sm-2 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</footer>
+
+    <!-- Modal -->
+    <div  class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 90%; height: 90%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="vidTitle"></h4>
+                </div>
+                <div class="modal-body" id="vidBody">
+
+                </div>
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>-->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</div>
+<!-- All Javascript at the bottom of the page for faster page loading -->
+
+<!-- ref:include analytics -->
+<!-- endref -->
+
+<script src="bower_components/jquery/jquery.js"></script>
+
+<!-- ref:js //ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js-->
+<script src="bower_components/angular/angular.js"></script>
+<!-- endref -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.0/chosen.jquery.min.js"></script>
+
+<!-- ref:js /dpd.js -->
+<script src="http://rokuman.aws.af.cm/dpd.js"></script>
+<!--<script src="http://localhost/dpd.js"></script>-->
+<!-- endref -->
+
+<!-- build:js scripts/plugins.js -->
+<script src="bower_components/bootstrap/js/affix.js"></script>
+<script src="bower_components/bootstrap/js/alert.js"></script>
+<script src="bower_components/bootstrap/js/dropdown.js"></script>
+<script src="bower_components/bootstrap/js/tooltip.js"></script>
+<script src="bower_components/bootstrap/js/modal.js"></script>
+<script src="bower_components/bootstrap/js/transition.js"></script>
+<script src="bower_components/bootstrap/js/button.js"></script>
+<script src="bower_components/bootstrap/js/popover.js"></script>
+<!--<script src="bower_components/bootstrap/js/typeahead.js"></script>-->
+<script src="bower_components/bootstrap/js/carousel.js"></script>
+<script src="bower_components/bootstrap/js/scrollspy.js"></script>
+<script src="bower_components/bootstrap/js/collapse.js"></script>
+<script src="bower_components/bootstrap/js/tab.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/modules.js -->
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/videos/videos.js"></script>
+<script src="scripts/controllers/videos/adminEdit.js"></script>
+<script src="scripts/controllers/videos/adminNew.js"></script>
+
+
+<script src="scripts/controllers/chanels/chanels.js"></script>
+<script src="scripts/controllers/chanels/adminEdit.js"></script>
+<script src="scripts/controllers/chanels/adminNew.js"></script>
+
+<script src="scripts/services/video.js"></script>
+<script src="scripts/services/user.js"></script>
+<script src="scripts/services/category.js"></script>
+<script src="scripts/services/chanel.js"></script>
+
+<script src="scripts/directives/chosen.js"></script>
+
+<!-- endbuild -->
+
+</body>
+</html>
+
