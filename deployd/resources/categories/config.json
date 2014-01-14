@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"Description": {
+			"name": "Description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "Description",
+			"order": 1
+		},
+		"chanelId": {
+			"name": "chanelId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "chanelId",
+			"order": 2
+		},
+		"type": {
+			"name": "type",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "type",
+			"order": 3
+		}
+	}
+}

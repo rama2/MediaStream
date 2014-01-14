@@ -1,0 +1,61 @@
+{
+	"type": "Collection",
+	"properties": {
+		"title": {
+			"name": "title",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "title",
+			"order": 0
+		},
+		"image": {
+			"name": "image",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "image",
+			"order": 1
+		},
+		"url": {
+			"name": "url",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "url",
+			"order": 2
+		},
+		"categoryIds": {
+			"name": "categoryIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": true,
+			"id": "categoryIds",
+			"order": 3
+		},
+		"ownerId": {
+			"name": "ownerId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerId",
+			"order": 4
+		},
+		"postedTime": {
+			"name": "postedTime",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "postedTime",
+			"order": 5
+		},
+		"chanelId": {
+			"name": "chanelId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "chanelId",
+			"order": 6
+		}
+	}
+}

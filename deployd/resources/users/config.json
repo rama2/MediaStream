@@ -1,0 +1,29 @@
+{
+	"type": "UserCollection",
+	"properties": {
+		"fullName": {
+			"name": "fullName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "fullName",
+			"order": 0
+		},
+		"email": {
+			"name": "email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "email",
+			"order": 1
+		},
+		"role": {
+			"name": "role",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "role",
+			"order": 2
+		}
+	}
+}

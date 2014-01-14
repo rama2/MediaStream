@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 0
+		},
+		"ownerId": {
+			"name": "ownerId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerId",
+			"order": 1
+		},
+		"poster": {
+			"name": "poster",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "poster",
+			"order": 2
+		},
+		"categoryIds": {
+			"name": "categoryIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": true,
+			"id": "categoryIds",
+			"order": 3
+		},
+		"postedTime": {
+			"name": "postedTime",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "postedTime",
+			"order": 4
+		}
+	}
+}
