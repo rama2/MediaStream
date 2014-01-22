@@ -44,7 +44,7 @@
 
 <div class="container" id="main">
 
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top" ng-controller="UserCtrl">
     <div class="container">
 
         <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -105,7 +105,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#"><span class="glyphicon glyphicon-off"></span> Sign out</a>
+                            <a href="#" ng-click="logout()"><span class="glyphicon glyphicon-off"></span> Sign out</a>
                         </li>
                     </ul>
                 </li>
@@ -224,7 +224,7 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/user.js"></script>
 
 <script src="scripts/controllers/videos/videos.js"></script>
 <script src="scripts/controllers/videos/adminEdit.js"></script>

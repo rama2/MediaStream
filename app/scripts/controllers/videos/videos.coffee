@@ -21,7 +21,7 @@ angular.module("rokumanv1.1App").controller "VideoCtrl", ($scope, $timeout, $roo
     ), ((error) ->
       console.log error.message or (error.errors and error.errors.completed) or "an error occurred"
     ), (update) ->
-      console.log "Got notification: " + update
+      console.log "Got notification: #{update}"
 
 
   getCurrentChanelVideos = ->
@@ -34,7 +34,7 @@ angular.module("rokumanv1.1App").controller "VideoCtrl", ($scope, $timeout, $roo
     ), ((error) ->
       console.log error.message or (error.errors and error.errors.completed) or "an error occurred"
     ), (update) ->
-      console.log "Got notification: " + update
+      console.log "Got notification: #{update}"
 
 
   $scope.playVideo = (video) ->
@@ -60,5 +60,4 @@ angular.module("rokumanv1.1App").controller "VideoCtrl", ($scope, $timeout, $roo
       return $location.path("/login")  if not userSvc.isActive("/login") and not userSvc.isActive("/", true)
       console.log error.message or (error.errors and error.errors.completed) or "an error occurred"
     ), (update) ->
-      console.log "Got notification: " + update
-
+      console.log "Got notification: #{update}"

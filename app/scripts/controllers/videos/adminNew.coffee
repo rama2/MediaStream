@@ -46,7 +46,7 @@ angular.module("rokumanv1.1App").controller "VideosNewCtrl", ($scope, $rootScope
 
   $scope.save = ->
 
-    # Update the video
+    # Add the video
     videoSvc.addVideo(
       title: $scope.video.title
       image: $scope.video.image

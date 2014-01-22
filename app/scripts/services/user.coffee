@@ -7,7 +7,6 @@ angular.module("rokumanv1.1App").factory "userSvc", ($q, $location) ->
   getMe: ->
     deferred = $q.defer()
 
-    #scope.apply(function(){
     deferred.notify "About to getMe."
     dpd.users.me (user) ->
       unless user
@@ -15,14 +14,11 @@ angular.module("rokumanv1.1App").factory "userSvc", ($q, $location) ->
       else
         deferred.resolve user
 
-
-    #  });
     deferred.promise
 
   login: (credentials) ->
     deferred = $q.defer()
 
-    #scope.apply(function(){
     deferred.notify "About to login."
     dpd.users.login credentials, (session, error) ->
       if error
@@ -30,20 +26,15 @@ angular.module("rokumanv1.1App").factory "userSvc", ($q, $location) ->
       else
         deferred.resolve session
 
-
-    #  });
     deferred.promise
 
   logout: ->
     deferred = $q.defer()
 
-    #scope.apply(function(){
     deferred.notify "About to logout."
     dpd.users.logout ->
       deferred.resolve()
 
-
-    #  });
     deferred.promise
 
   isActive: (route, strict) ->
@@ -51,3 +42,15 @@ angular.module("rokumanv1.1App").factory "userSvc", ($q, $location) ->
 
     #Only considering the base path (begining)
     $location.path().indexOf(route) is 0
+
+  addUser: (data) ->
+    deferred = $q.defer()
+
+    deferred.notify "About to add a new user."
+    dpd.users.post data, (results, error) ->
+      if error
+        deferred.reject error
+      else
+        deferred.resolve results
+
+    deferred.promise

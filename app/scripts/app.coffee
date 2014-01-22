@@ -5,9 +5,13 @@ angular.module("rokumanv1.1App", ["ngCookies", "ngResource", "ngSanitize", "ngRo
     controller: "MainCtrl"
     title: "Rokuman - Home"
   ).when("/login",
-    templateUrl: "views/login.html"
-    controller: "LoginCtrl"
+    templateUrl: "views/user/login.html"
+    controller: "UserCtrl"
     title: "Rokuman - Login"
+  ).when("/signup",
+    templateUrl: "views/user/signup.html"
+    controller: "UserCtrl"
+    title: "Rokuman - Signup"
   ).when("/admin/videos",
     templateUrl: "views/videos/adminList.html"
     controller: "VideoCtrl"
@@ -49,7 +53,7 @@ angular.module("rokumanv1.1App", ["ngCookies", "ngResource", "ngSanitize", "ngRo
     ), ((error) ->
       $rootScope.currentUser = ""
       $rootScope.userLoaded = false
-      $location.path "/login"  if not userSvc.isActive("/login") and not userSvc.isActive("/", true)
+      $location.path "/login"  if not userSvc.isActive("/login") and not userSvc.isActive("/signup") and not userSvc.isActive("/", true)
     ), (update) ->
       console.log "Got notification: #{update}"
 ]
