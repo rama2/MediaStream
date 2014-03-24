@@ -23,7 +23,6 @@ angular.module("rokumanv1.1App").controller "VideoCtrl", ($scope, $timeout, $roo
     ), (update) ->
       console.log "Got notification: #{update}"
 
-
   getCurrentChanelVideos = ->
     videoSvc.getVideos(
       chanelId: $routeParams.chanelId
@@ -35,7 +34,6 @@ angular.module("rokumanv1.1App").controller "VideoCtrl", ($scope, $timeout, $roo
       console.log error.message or (error.errors and error.errors.completed) or "an error occurred"
     ), (update) ->
       console.log "Got notification: #{update}"
-
 
   $scope.playVideo = (video) ->
 
