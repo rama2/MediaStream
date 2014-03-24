@@ -1,22 +1,22 @@
 'use strict';
 
-describe('Controller: VideoCtrl', function () {
+describe('Controller: UserCtrl', function () {
 
   // load the controller's module
   beforeEach(module('rokumanv1.1App'));
 
-  var VideoCtrl,
+  var UserCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    VideoCtrl = $controller('VideoCtrl', {
+    UserCtrl = $controller('UserCtrl', {
       $scope: scope
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.videos).toBeDefined();
+    expect(scope).toBeDefined();
   });
 });

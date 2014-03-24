@@ -3,7 +3,7 @@
 describe('Service: Video', function () {
 
   // load the service's module
-  beforeEach(module('Rokumanv11App'));
+  beforeEach(module('rokumanv1.1App'));
 
   // instantiate service
   var VideoSvc;
@@ -11,7 +11,7 @@ describe('Service: Video', function () {
     VideoSvc = _VideoSvc_;
   }));
 
-  it('should do something', function () {
+  xit('should do something', function () {
     expect(!!VideoSvc).toBe(true);
   });
 
