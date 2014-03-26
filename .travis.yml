@@ -8,7 +8,7 @@ before_script:
 script: "grunt"
 
 after_script:
-  - grunt afDeploy:$afAppName:$afUsername:$afPassword
+  - grunt afDeploy:$afAppName:$afUsername:'$afPassword'
 
 env:
   global:
