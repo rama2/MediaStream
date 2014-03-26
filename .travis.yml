@@ -5,12 +5,12 @@ before_script:
 - npm install -g grunt-cli bower
 - bower install
 script: grunt
-
+before_deploy: cd deployd;ls -l
 deploy:
   provider: appfog
   email: dbdjbah@gmail.com
   password:
-    secure: atNp5DQbet7BfNMXXK9CWZ4rS1H6rYehL3Fp5cYlGqYhkw+cUrJdvNw+rYP1ANthxtsEsV7/nZT8LfgcMV7fIhGhSVFNfTeTKjiCq4fwDf0KL8kfm756vk98co9mdBzDBP1IxQIA11Sw7lyr4nbrB907HeBxy1wQK2PVWjDJa0o=
+    secure: Aa63rFrEqUtccFwvd2gD8nUxlpa7LlQU7ypIXsH75NhIS2bemlSBJ4zaRLMeBww6WwwxKV7Y3iUrENozSQL3+YmIuX8pDWeJZT2AxMKijqcM1E9/4aILInUIgTcCnfryIH/bdGuEZFtUczbQBKhAvuE1KYiWUwtHx/wQ3NTTblQ=
   app: rokuman
   on:
     repo: rama2/MediaStream
