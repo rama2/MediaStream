@@ -1,4 +1,4 @@
-// hello.js
+// app.js
 var deployd = require('deployd')
   , options = {port: 80};
 
