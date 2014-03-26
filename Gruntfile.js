@@ -353,9 +353,9 @@ module.exports = function (grunt) {
           // Your command may vary in terms of what directory
           // you run this in. For example,
           // my build script builds everything into /dist
-          command: "cd deployd; af login --email '<%= af.username %>' --passwd '<%= af.password %>'; af update '<%= af.appName %>';",
+          command: 'cd deployd; af login --email \'<%= af.username %>\' --passwd \'<%= af.password %>\'; af update \'<%= af.appName %>\';',
           options: {
-            stdout: true // Outputs grunt-shell commands to the terminal
+            stdout: false // Outputs grunt-shell commands to the terminal
           }
         }
       }
@@ -373,7 +373,7 @@ module.exports = function (grunt) {
 
     if (arguments.length === 0) {
       // Log an error
-      grunt.log.error("afDeploy: No arguments provided. Please provide the App Name, Username and Password.");
+      grunt.log.error('afDeploy: No arguments provided. Please provide the App Name, Username and Password.');
       // Return false to short circuit the task.
       return false;
     }
