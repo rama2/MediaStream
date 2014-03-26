@@ -5,5 +5,7 @@ dist
 .idea
 app/bower_components
 report
-deployd
+.dpd
 *~
+public
+deployd/data

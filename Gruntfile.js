@@ -347,7 +347,18 @@ module.exports = function (grunt) {
                     'report/output/directory': ['app/scripts/**/*.js', 'test/**/*.js']
                 }
             }
+        },
+      shell: {
+        afDeploy: {
+          // Your command may vary in terms of what directory
+          // you run this in. For example,
+          // my build script builds everything into /dist
+          command: "cd deployd; af login --email '<%= af.username %>' --passwd '<%= af.password %>'; af update '<%= af.appName %>';",
+          options: {
+            stdout: true // Outputs grunt-shell commands to the terminal
+          }
         }
+      }
     });
 
 
@@ -355,7 +366,35 @@ module.exports = function (grunt) {
         'plato'
     ]);
 
-    grunt.registerTask('server', function (target) {
+  grunt.registerTask('afDeploy', function (appName, username, password) {
+    // You can go as elaborate as you want on
+    // the argument fallbacks,
+    // for the sake of this ProTip, I'm just using 'arguments'
+
+    if (arguments.length === 0) {
+      // Log an error
+      grunt.log.error("afDeploy: No arguments provided. Please provide the App Name, Username and Password.");
+      // Return false to short circuit the task.
+      return false;
+    }
+
+    // Set args as config items, 'af' here is arbitrary, it can be anything
+    // as long as you reference it by this name in your Grunt config.
+    // As this is how we're able to have <%= af.appName %> mean something
+    grunt.config.set('af.appName', appName);
+    grunt.config.set('af.username', username);
+    grunt.config.set('af.password', password);
+
+    var tasks = [
+      // Whatever your build tasks are, i.e compass:dist, etc.
+      'shell:afDeploy' // It depends on your build but most likely you'll want to do this as the very last step.
+    ];
+
+    // Run tasks
+    grunt.task.run(tasks);
+  });
+
+  grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'connect:dist:keepalive']);
         }
