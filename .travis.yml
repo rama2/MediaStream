@@ -3,13 +3,14 @@ language: node_js
 node_js:
 - '0.10'
 before_script:
-
 - npm install -g grunt-cli bower
 - bower install
 
 script: grunt
 
-before_deploy: "cd deployd"
+before_deploy:
+- cd deployd
+- npm install
 
 deploy:
   provider: appfog
@@ -17,5 +18,6 @@ deploy:
   password:
     secure: vqzJAlVGk7ihOf2hNXTHOWkwy01hIYZoLoEaWdPwk21ClW8FOtN/uTBZPIBkILN5PQ7t4MWzLAUBvVNbfmW7P3VC6uj1fctL9j7RM0qayPS1/HrGbK8ij8hf5yovF3PRCBomTvHimJBLPrfAKChZ6kIO56ZPT712TDsgjQHo3LA=
   app: rokuman
+  skip_cleanup: true
   on:
     repo: rama2/MediaStream
