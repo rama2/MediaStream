@@ -1,17 +1,16 @@
 language: node_js
 node_js:
-  - '0.10'
+- '0.10'
 before_script:
-  - 'npm install -g grunt-cli bower'
-  - 'bower install'
+- npm install -g grunt-cli bower
+- bower install
+script: grunt
 
-script: "grunt"
-
-after_script:
-  - grunt afDeploy:$afAppName:$afUsername:'$afPassword'
-
-env:
-  global:
-    - secure: "FgdeBbazDx6Cw7c8AMNHDRNV6QezBi8t+6YChCJ2FGDaOoqQJb+snXZgePKxobxeAEXmZThN/XgMON4n7QthjR3R7SDRMuKsLcsoVTvYg1QS3nDPt2wbKcqaAmqVOedXf+P6d03+jRr5k0xdZRp8ojd+W0aEk4WfMYeg5qSKQ1k="
-    - secure: "uyC8QyKR37Soplf6OB2OHy7PPxQD5rPNmfmhSHOiFtMrkr3lnlkbErrR/gd0CsbL+HwiBqm2QvbnuR819eaQDT3r6oGCxmkoynmZe+hbWcpc1mcCFsrDrSRyVIxTCCEAnij+MDDjgKNogJ6/m+fGK8NzMDUMNV5ENO8Q6qc1CNk="
-    - secure: "nDchTYEbRnGeFrSUK39WpQ9aV3khcE5bIHSRl9FHYbF0s6lsIkbKlTa3OrEIh8M0xflZ4/xTUQoshabolrgj8E3z+fSEh+TfnUqMg7Qh7hFilP+C5gtME/G3rUXP8K3WhBwUej07XVVsdsq2HSm6xeg/pnwNPsusZE4RVm6dEts="
+deploy:
+  provider: appfog
+  email: dbdjbah@gmail.com
+  password:
+    secure: atNp5DQbet7BfNMXXK9CWZ4rS1H6rYehL3Fp5cYlGqYhkw+cUrJdvNw+rYP1ANthxtsEsV7/nZT8LfgcMV7fIhGhSVFNfTeTKjiCq4fwDf0KL8kfm756vk98co9mdBzDBP1IxQIA11Sw7lyr4nbrB907HeBxy1wQK2PVWjDJa0o=
+  app: rokuman
+  on:
+    repo: rama2/MediaStream
